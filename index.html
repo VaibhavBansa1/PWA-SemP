@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MITS AMS - PWA Demo</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#005088">
+    
+    <style>
+        body { font-family: system-ui, sans-serif; text-align: center; background-color: #f3f0df; color: #005088; padding: 10%; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); display: inline-block; }
+        button { background: #11caa0; color: white; border: none; padding: 10px 20px; border-radius: 5px; font-size: 18px; cursor: pointer; margin-top: 15px; }
+        .status-badge { font-weight: bold; padding: 5px 10px; border-radius: 20px; background: #e2e8f0; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>🎓 AMS Lite Portal</h1>
+        <p>Student Name: Vaibhav</p>
+        <p>Network Status: <span id="status" class="status-badge">Online 🟢</span></p>
+        <button onclick="alert('Attendance Marked Successfully!')">Mark Attendance</button>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
