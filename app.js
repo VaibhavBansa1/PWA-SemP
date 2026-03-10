@@ -7,11 +7,19 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-// 2. UI Updates for Live Demo (Shows when you pull the plug on WiFi)
-window.addEventListener('online', () => {
-    document.getElementById('status').innerText = 'Online 🟢';
-});
+// 2. UI Updates for Live Demo
+function updateNetworkStatus() {
+    const statusText = document.getElementById('status');
+    if (navigator.onLine) {
+        statusText.innerText = 'Online 🟢';
+    } else {
+        statusText.innerText = 'Offline 🔴 (Running from Cache)';
+    }
+}
 
-window.addEventListener('offline', () => {
-    document.getElementById('status').innerText = 'Offline 🔴 (Running from Cache)';
-});
+// Check the status IMMEDIATELY when the page loads
+window.addEventListener('load', updateNetworkStatus);
+
+// Listen for any network changes while the app is open
+window.addEventListener('online', updateNetworkStatus);
+window.addEventListener('offline', updateNetworkStatus);
